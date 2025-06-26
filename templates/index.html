@@ -1,0 +1,297 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <main>
+            <!-- hero start -->
+            <section class="hero-slider hero-style-1 section-notch">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {% for slide in Slider %}
+                        <div class="swiper-slide">
+                            <div class="slide-inner slide-overlay slide-bg-image" data-background="{{ slide.rasm.url }}">
+                                <div class="container">
+                                    <div data-swiper-parallax="200" class="slide-span">
+                                        <span>{{ slide.Text_tepa }}</span>
+                                    </div>
+                                    <div data-swiper-parallax="300" class="slide-title">
+                                        <h2>{{ slide.Text_katta }}</h2>
+                                    </div>
+                                    <div data-swiper-parallax="400" class="slide-text">
+                                        <p>{{ slide.Text_pas }}.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="slider-btn">
+                                        <a data-swiper-parallax="500" class="thm-btn thm-btn-2" href="{% url 'contact' %}">ALOQA
+                                            Now</a>
+                                        <a data-swiper-parallax="550" class="thm-btn" href="{% url 'products' %}">MAHSULOTLARni ko'ring</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    <!-- end swiper-wrapper -->
+
+                    <!-- swipper controls -->
+                    <div class="container">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- hero end -->
+
+            <!-- feature area start -->
+            <section class="feature-area pt-110 pb-80">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-9">
+                            <div class="section-title text-center mb-60">
+                                <h2 class="title">Neo Tech Polymerga hush kelibsiz</h2>
+                                <p>Here is what you can expect from a house cleaning from a Handy professional. Download the app
+                                    to share further cleaning details and instructions!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <div class="feature-item text-center mb-30">
+                                <div class="feature-shape">
+                                    <img src="{%static 'assets/img/icon/eco-friendly.png' %}" alt="" style=" max-width: 56%;">
+                                </div>
+                                <div class="feature-content">
+                                    <div class="feature-title">
+                                        <h3>Ekologik toza</h3>
+                                    </div>
+                                    <p>Biz atrof muhitni asrash to'g'risida doim izlanishdamiz
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <div class="feature-item text-center mb-30">
+                                <div class="feature-shape feature-shape-3">
+                                    <img src="{%static 'assets/img/icon/safety.png' %}" alt="" style=" max-width: 68%;">
+                                </div>
+                                <div class="feature-content">
+                                    <div class="feature-title feature-title-3">
+                                        <h3>Xavfsizlik</h3>
+                                    </div>
+                                    <p>Mahsulotlarimiz xavfsizligi doimo ustuvor – har bir bosqich sinovdan o‘tkaziladi.
+                                    </p>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                        <div class="col-xl-3 col-lg-6 col-md-6">
+                            <div class="feature-item text-center mb-30">
+                                <div class="feature-shape feature-shape-4">
+                                    <img src="{%static 'assets/img/icon/ishonch.png' %}" alt="" style=" max-width: 58%;">
+                                </div>
+                                <div class="feature-content">
+                                    <div class="feature-title feature-title-4">
+                                        <h3>Mijozlar ishonchi</h3>
+                                    </div>
+                                    <p>Ishonchli xizmat va halollik – biz mijozlar bilan uzoq hamkorlikka intilamiz.
+                                    </p>
+                                </div>
+                            </div>
+                        </div><div class="col-xl-3 col-lg-6 col-md-6">
+                            <div class="feature-item text-center mb-30">
+                                <div class="feature-shape feature-shape-2">
+                                    <img src="{%static 'assets/img/icon/reliability.png' %}" alt="" style=" max-width: 58%;">
+                                </div>
+                                <div class="feature-content">
+                                    <div class="feature-title feature-title-2">
+                                        <h3>Yuqori sfat</h3>
+                                    </div>
+                                    <p>Har bir mahsulotda mukammallikka intilamiz – sifat biz uchun ustuvor. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- feature area end -->
+
+            <!-- about area start -->
+            <section class="about-area section-bg-one section-notch">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 d-flex align-items-center">
+                            <div class="about-content pt-100 pb-100">
+                                <div class="section-title section-title-white mb-30">
+                                    <h2 class="title">{{shortdesc.name}}</h2>
+                                </div>
+                                <div class="about-btn">
+                                    <a class="thm-btn thm-btn-2" href="{% url 'contact' %}">Bog'lanish</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="about-img d-none d-lg-block f-right">
+                                <img src="{{shortdesc.img.url}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- about area end --> 
+          
+
+            <!-- class area start -->
+            <section class="class-area pt-110 pb-110">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-9">
+                            <div class="section-title text-center mb-60">
+                                <h2 class="title">Bizning maxsulotlar</h2>
+                                <p>Here is what you can expect from a house cleaning from a Handy professional. Download the app to share further cleaning details and instructions!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        
+                        {% for product6 in Product %}
+                        <div class="col-xl-4 col-lg-4 col-md-6">
+                            <a href="{{product6.get_absolute_url}}"> <div class="class-item mb-30">
+                                <figure class="product__image--holder">
+                                    <img src="{{product6.picture.url}}" alt="Product">
+                                 </figure>
+                                 <div class="class-content">
+                                     <h4 class="title">{{product6.name}}</h4>
+                                     <p>{{product6.description|truncatewords:4}}<b>ko'proq bilish ... </b></p>
+                                 </div>
+                                 <ul class="schedule">
+                                     <li>
+                                         <span>Qurish muddati</span>
+                                         <span class="class-size">{{product6.time}}</span>
+                                     </li>
+                                     <li>
+                                         <span>Qadoqlash miqdori</span>
+                                         <span class="class-size class-size-2">{{product6.made}}</span>
+                                     </li>
+                                 </ul>
+                             </div>
+                             </a>
+                         </div>
+                         {%endfor%}
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="view-class text-center mt-30">
+                                <a class="thm-btn" href="{% url 'products' %}">Barcha mahsulotlar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- class area start -->
+
+           
+            <!-- counter area start -->
+            <section class="counter-area section-bg-two section-notch pt-130 pb-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="single-counter text-center pb-30">
+                                <img src="{%static 'assets/img/icon/user.png' %}" alt="" style="   max-width: 55px; ">
+                                <h3><span class="odometer" data-count="2500">00</span><span class="plus">+</span></h3>
+                                <p>BAXTLI MIJOZLAR</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="single-counter text-center pb-30">
+                                <img src="{%static 'assets/img/icon/c-icon2.png' %}" alt="">
+                                <h3><span class="odometer" data-count="400">00</span><span class="plus">+</span></h3>
+                                <p>MING SAVDO</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="single-counter text-center pb-30">
+                                <img src="{%static 'assets/img/icon/c-icon3.png' %}" alt="">
+                                <h3><span class="odometer" data-count="370">00</span><span class="plus">+</span></h3>
+                                <p>MING BUYURTMA</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="single-counter text-center pb-30">
+                                <img src="{%static 'assets/img/icon/c-icon4.png' %}" alt="">
+                                <h3><span class="odometer" data-count="100">00</span><span class="plus">+</span></h3>
+                                <p>MAXSULOTLAR</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- counter area end -->
+            <!-- brand area start -->
+            <section class="brand-area pt-120 pb-120">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section-title section-title-black text-center mb-55">
+                                <h2 class="title">Bizning Hamkorlar</h2>
+                            </div>
+                            <div class="brand-active owl-carousel">
+                                {% for homiy in hamkor %}
+                                <div class="single-brand">
+                                    <img src="{{ homiy.img.url }}" alt="brand image">
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- brand area end -->
+
+            <!-- blog area start -->
+            <section class="blog-area section-bg-three section-notch pt-120 pb-90">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-9">
+                            <div class="section-title section-title-white text-center mb-55">
+                                <h2 class="title">So'ngi yangiliklar</h2>
+                                <p>Here is what you can expect from a house cleaning from a Handy professional. Download the
+                                    app to share further cleaning details and instructions!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        {% for yangilik3 in Yangiliklar %}
+                        <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="blog-item mb-30">
+                                <div class="blog-image">
+                                    <a href="{{yangilik3.get_absolute2_url}}"><img src="{{yangilik3.img.url}}" alt="blog image"></a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta ul_li">
+                                        <span><i class="far fa-user"></i><a href="#!">Neo Tech Polymer</a></span>
+                                        <span><i class="far fa-calendar-alt"></i>{{yangilik3.time}}</span>
+                                    </div>
+                                    <h4 class="blog-title"><a href="{{yangilik3.get_absolute2_url}}">{{yangilik3.titl}}</a></h4>
+                                    <a class="blog-btn" href="{{yangilik3.get_absolute2_url}}">Batafsil</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <!-- blog area end -->
+
+            <!-- brand area start -->
+            <section class="brand-area pt-110 pb-120">
+                <div class="container">
+                    <div class="row">
+                       
+                    </div>
+                </div>
+            </section>
+            <!-- brand area end -->
+        </main>
+
+        {% endblock content %}

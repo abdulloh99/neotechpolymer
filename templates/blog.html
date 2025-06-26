@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <main>
+           <!-- page title start -->
+           <div class="page-title-area section-notch pt-170 pb-170" data-background="{% static 'assets/img/bg/blogbg.png' %}">
+            <div class="banner-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="page-title">
+                            <h2>Yangiliklar</h2>
+                            <div class="breadcrumb-list text-left">
+                                <ul>
+                                    <li><a href="index.html">Bosh sahifa</a></li>
+                                    <li>Yangiliklar</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page title end -->
+
+        <!-- blog start -->
+        <section class="blog-content-area pt-120 pb-90">
+            <div class="container">
+                <div class="row">
+                    <div class="container">
+                        <div class="blog-wrapper mb-30 row">
+                            {% for news in yangilik %}
+                            <div class="post-item format-standard mb-30 col-6">
+                                <div class="post-thumb">
+                                    <a href="{{news.get_absolute2_url}}"><img src="{{news.img.url}}" alt="blog"></a>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta mb-20">
+                                        <span><a href="#!"><i class="far fa-calendar-alt"></i> {{news.time}}</a></span>
+                                        <span><a href="#!"><i class="far fa-user"></i> NeoTech Polymer</a></span>
+                                    </div>
+                                    <h4 class="post-title">
+                                        <a href="{{news.get_absolute2_url}}">{{news.titl}}</a>
+                                    </h4>
+                                    <div class="post-text">
+                                        <p>{{news.desc|truncatewords:20}}</p>
+                                    </div>
+                                    <div class="read-more mt-20">
+                                        <a class="thm-btn" href="{{news.get_absolute2_url}}">Batafsil</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <div class="pagination pt-20 mb-30">
+                                <ul>
+                                    <li><a href="#!"><i class="far fa-angle-double-left"></i></a></li>
+                                    <li class="active"><a href="#!">1</a></li>
+                                    <li><a href="#!">2</a></li>
+                                    <li><a href="#!">3</a></li>
+                                    <li><a href="#!"><i class="far fa-angle-double-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- blog end -->
+
+        </main>
+        
+        {% endblock content %}

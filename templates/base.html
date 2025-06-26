@@ -1,0 +1,234 @@
+{% load static %}
+{% static "images" as baseUrl%}
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Neo Tech Polymer</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/neo.png' %}">
+
+    <!-- css include -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/uikit.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/odometer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+</head>
+
+<body>
+
+    <!-- body wrap start -->
+    <div class="body_wrap">
+
+        <!-- preloder start -->
+        <div id="loading">
+            <div id="loading-center">
+                <div id="loading-center-absolute">
+                    <div class="object" id="object_one"></div>
+                    <div class="object" id="object_two"></div>
+                    <div class="object" id="object_three"></div>
+                    <div class="object" id="object_four"></div>
+                </div>
+            </div>
+        </div>
+        <!-- preloder end -->
+
+        <!-- back to top start -->
+        <div class="progress-wrap">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+        <!-- back to top end -->
+
+        <!-- header start -->
+        <header class="header-area">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="left">
+                                <li><span><i class="far fa-clock"></i></span> {{Contact.Ishvaqti}}</li>
+                                <li><span><i class="far fa-phone"></i></span> {{Contact.Tel}}</li>
+                                <li><span><i class="far fa-map-marker-alt"></i></span> {{Contact.address}}
+                                </li>
+                            </ul>
+                            <ul class="right">
+                                <li><a href="{{Contact.facebook}}"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="{{Contact.insta}}"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="{{Contact.telegram}}"><i class="fab fa-telegram"></i></a></li>
+                                <li><a href="mailto:{{Contact.mail}}"><i class="fas fa-envelope"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom-area" data-uk-sticky="top: 250; animation: uk-animation-slide-top;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2 col-6">
+                            <div class="logo">
+                                <a href="{% url 'index' %}"><img src="{% static 'assets/img/neo.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7 d-none d-lg-block">
+                            <div class="main-menu-wrap">
+                                <nav id="mobile-menu" class="main-menu">
+                                    <ul class="main-menu-list ul_li">
+                                        <li class="active"><a href="{% url 'index' %}">Bosh sahifa</a></li>
+                                        <li >
+                                            <a href="{% url 'products' %}">Mahsulotlar</a>
+                                        </li>
+                                        <li><a href="{% url 'about' %}">Biz haqimizda</a></li>
+                                      
+                                        <li><a href="{% url 'blog' %}">Yangiliklar</a>
+                                           
+                                        </li>
+                                        <li><a href="{% url 'contact' %}">Bog'lanish</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-6">
+                            <div class="header-right">
+                                <div class="header-btn">
+                                    <a class="thm-btn" href="{% url 'contact' %}">Hoziroq qo'ng'iroq qiling</a>
+                                </div>
+                                <div class="side-mobile-menu">
+                                    <button class="side-info-close"><i class="far fa-times"></i></button>
+                                    <div class="mobile-menu"></div>
+                                </div>
+                                <div class="side-menu-icon d-lg-none">
+                                    <button class="side-toggle"><i class="far fa-bars"></i></button>
+                                </div>
+                                <div class="offcanvas-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+
+        {% block content %}
+
+        {% endblock content %}
+
+          <!-- footer start -->
+          <footer>
+            <div class="footer-area" data-background="{% static 'assets/img/bg/footer2.jpg'%}">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="footer-top-wrapper">
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-4 col-md-4">
+                                    <div class="footer-top-single">
+                                        <div class="footer-top-icon">
+                                            <img src="{% static 'assets/img/icon/ft01.png' %}" alt="">
+                                        </div>
+                                        <div class="footer-top-content">
+                                            <h5>Biz bilan bog'lanish</h5>
+                                            <span>{{Contact.Tel}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4">
+                                    <div class="footer-top-single">
+                                        <div class="footer-top-icon">
+                                            <img src="{% static 'assets/img/icon/ft02.png' %}" alt="">
+                                        </div>
+                                        <div class="footer-top-content">
+                                            <h5>Bizning po'chta manzilimiz</h5>
+                                            <span>{{Contact.mail}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4">
+                                    <div class="footer-top-single footer-top-single-2">
+                                        <div class="footer-top-icon">
+                                            <img src="{% static 'assets/img/icon/ft03.png' %}" alt="">
+                                        </div>
+                                        <div class="footer-top-content">
+                                            <h5>Bizning manzil</h5>
+                                            <span>{{Contact.address}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="copyright-area pt-30 pb-30">
+                <div class="container">
+                    <div class="row flex-row-reverse align-items-center">
+                        <div class="col-xl-8 col-lg-8 col-md-4">
+                            <div class="footer-social">
+                                <ul>
+                                    <li>
+                                        <a href="{{Contact.facebook}}"><i class="fab fa-facebook-f"></i></a>
+                                        <span>Facebook</span>
+                                    </li>
+                                    <li>
+                                        <a href="{{Contact.insta}}"><i class="fab fa-instagram"></i></a>
+                                        <span>Instagram</span>
+                                    </li>
+                                    <li>
+                                        <a href="{{Contact.telegram}}"><i class="fab fa-telegram"></i></a>
+                                        <span>Telegram</span>
+                                    </li>
+                                    <li>
+                                        <a href="malito:{{Contact.mail}}"><i class="fab fa-google"></i></a>
+                                        <span>Mail</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-8">
+                            <div class="copyright-text">
+                                <p>	&copy; 2025 Neo Tech Polymer Designed by <a href="https://t.me/Abdulloh1737" target="_blank">Abdullohdev</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+
+        
+    </div>
+    <!-- body wrap end -->
+
+    <!-- jquery include -->
+    <script src="{% static 'assets/js/jquery-3.5.1.min.js'%}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'assets/js/jquery.meanmenu.min.js'%}"></script>
+    <script src="{% static 'assets/js/jqueryui.js'%}"></script>
+    <script src="{% static 'assets/js/touchspin.js'%}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'assets/js/odometer.min.js'%}"></script>
+    <script src="{% static 'assets/js/uikit.min.js'%}"></script>
+    <script src="{% static 'assets/js/jquery.appear.js'%}"></script>
+    <script src="{% static 'assets/js/swiper.min.js'%}"></script>
+    <script src="{% static 'assets/js/backToTop.js'%}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js'%}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js'%}"></script>
+    <script src="{% static 'assets/js/main.js'%}"></script>
+</body>
+
+</html>

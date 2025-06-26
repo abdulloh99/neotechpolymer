@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <main>
+           <!-- page title start -->
+           <div class="page-title-area section-notch pt-170 pb-170" data-background="{% static 'assets/img/bg/neobg3.jpg' %}">
+                <div class="banner-overlay"></div>
+                <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="page-title">
+                            <h2>Bizning maxsulotlar</h2>
+                            <div class="breadcrumb-list text-left">
+                                <ul>
+                                    <li><a href="{% url 'index'%}">Bosh sahifa</a></li>
+                                    <li>Maxsulotlar</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page title end -->
+
+        <!-- classes start -->
+        <section class="classes-area pt-110 pb-120">
+            <div class="container">
+                <div class="row justify-content-center mt-none-30">
+                    {% for product in Product %}
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <a href="{{product.get_absolute_url}}"> <div class="class-item mb-30">
+                            <figure class="product__image--holder">
+                                <img src="{{product.picture.url}}" alt="Product">
+                             </figure>
+                             <div class="class-content">
+                                 <h4 class="title">{{product.name}}</h4>
+                                 <p>{{product.description|truncatewords:5}}<b>ko'proq bilish ... </b></p>
+                             </div>
+                             <ul class="schedule">
+                                 <li>
+                                     <span>Qurish muddati</span>
+                                     <span class="class-size">{{product.time}}</span>
+                                 </li>
+                                 <li>
+                                     <span>Qadoqlash miqdori</span>
+                                     <span class="class-size class-size-2">{{product.made}}</span>
+                                 </li>
+                             </ul>
+                         </div>
+                         </a>
+                     </div>
+                     {%endfor%}
+                    </div>
+                <div class="row">
+                    <div class="col-12 mt-50">
+                        <div class="pagination ul_li_center">
+                            <ul>
+                                <li><a href="#!"><i class="far fa-angle-double-left"></i></a></li>
+                                <li class="active"><a href="#!">1</a></li>
+                                <li><a href="#!">2</a></li>
+                                <li><a href="#!">3</a></li>
+                                <li><a href="#!"><i class="far fa-angle-double-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- classes end -->
+
+        </main>
+        
+        {% endblock content %}
